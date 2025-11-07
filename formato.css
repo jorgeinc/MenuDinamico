@@ -1,0 +1,137 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: hsl(185, 75%, 88%);
+  color: #222;
+}
+
+header {
+   
+  background: #000000;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+#h1 {
+  text-align:center;
+  margin: 0;
+  font-size: 1.4em;
+  
+}
+
+nav {
+  position: relative;
+}
+
+#hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+}
+
+#menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+#menu li {
+  position: relative;
+}
+
+#menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 10px;
+  display: block;
+}
+
+#menu li ul {
+  display: none;
+  position: absolute;
+  background: white;
+  color: #333;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 150px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+#menu li:hover > ul {
+  display: block;
+}
+
+#menu li ul li a {
+  color: #333;
+  padding: 8px 12px;
+}
+
+#menu li ul li a:hover {
+  background: #0ea5a4;
+  color: white;
+}
+
+/* Sección de administración */
+main {
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+input, select, button {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #788585;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #098a8a;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+  #hamburger {
+    display: block;
+  }
+
+  #menu {
+    display: none;
+    flex-direction: column;
+    background: #0ea5a4;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 200px;
+  }
+
+  #menu.active {
+    display: flex;
+  }
+
+  #menu li ul {
+    position: static;
+    box-shadow: none;
+  }
+}
