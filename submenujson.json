@@ -1,27 +1,36 @@
 {
-  "menuDinamic": [
+  "menu": [
     {
       "id": 1,
-      "nombre": "Jugos Naturales",
-      "principal": "inicio.html"
+      "nombre": "Inicio",
+      "enlace": "inicio.html"
     },
     {
       "id": 2,
-      "nombre": "Pollo",
-      "principal": "/pollo"
+      "nombre": "Sobre Nosotros",
+      "enlace": "/sobre-nosotros"
     },
     {
       "id": 3,
-      "nombre": "Hamburguesa",
-      "principal": "/hamburguesa",
-    
+      "nombre": "Servicios",
+      "enlace": "/servicios",
+      "submenu": [
+        {
+          "id": 31,
+          "nombre": "Desarrollo Web",
+          "enlace": "/servicios/desarrolloWeb.htm"
+        },
+        {
+          "id": 32,
+          "nombre": "Soporte Técnico",
+          "enlace": "/servicios/soporte"
+        }
+      ]
     },
     {
       "id": 4,
-      "nombre": "Guarniciones",
-      "principal": "/Guarniciones"
+      "nombre": "Contacto",
+      "enlace": "/contacto"
     }
   ]
-
 }
-
