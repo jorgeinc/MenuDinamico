@@ -1,36 +1,28 @@
 {
-  "menu": [
+  "menuDinamic": [
     {
       "id": 1,
-      "nombre": "Inicio",
-      "enlace": "inicio.html"
+      "nombre": "Jugos Naturales",
+      "principal": "inicio.html"
     },
     {
       "id": 2,
       "nombre": "Sobre Nosotros",
-      "enlace": "/sobre-nosotros"
+      "principal": "/sobre-nosotros"
     },
     {
       "id": 3,
       "nombre": "Servicios",
-      "enlace": "/servicios",
+      "principal": "/servicios",
       "submenu": [
-        {
-          "id": 31,
-          "nombre": "Desarrollo Web",
-          "enlace": "/servicios/desarrolloWeb.htm"
-        },
-        {
-          "id": 32,
-          "nombre": "Soporte Técnico",
-          "enlace": "/servicios/soporte"
-        }
+        
       ]
     },
     {
       "id": 4,
       "nombre": "Contacto",
-      "enlace": "/contacto"
+      "principal": "/contacto"
     }
   ]
+
 }
