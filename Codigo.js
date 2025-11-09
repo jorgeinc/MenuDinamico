@@ -1,8 +1,8 @@
 
 const menuContainer = document.getElementById("menu");
 const form = document.getElementById("form");
-const padreSelect = document.getElementById("padre");
-const hamburger = document.getElementById("hamburger");
+const padreSelect = document.getElementById("principal");
+const enter = document.getElementById("enter");
 
 let menuData = [];
 
@@ -49,7 +49,7 @@ function renderMenu() {
 
 // Actualiza la lista de padres en el formulario
 function updateParentSelect() {
-  padreSelect.innerHTML = '<option value="">Seleccione o Nuevo</option>';
+  princialSelect.innerHTML = '<option value="">Seleccione o Nuevo</option>';
   menuData.forEach(item => {
     const option = document.createElement("option");
     option.value = item.id;
@@ -64,7 +64,7 @@ form.addEventListener("submit", (e) => {
 
   const nombre = document.getElementById("nombre").value.trim();
   const enlace = document.getElementById("enlace").value.trim();
-  const padre = document.getElementById("padre").value;
+  const principal = document.getElementById("principal").value;
 
   if (!nombre) {
     alert("El nombre es obligatorio");
@@ -78,7 +78,7 @@ form.addEventListener("submit", (e) => {
   };
 
   if (padre) {
-    const parentItem = menuData.find(i => i.id == padre);
+    const parentItem = menuData.find(i => i.id == principal);
     if (!parentItem.submenu) parentItem.submenu = [];
     parentItem.submenu.push(newItem);
   } else {
@@ -91,6 +91,7 @@ form.addEventListener("submit", (e) => {
 });
 
 // (móvil)
-hamburger.addEventListener("click", () => {
+enter.addEventListener("click", () => {
   menuContainer.classList.toggle("active");
 });
+
