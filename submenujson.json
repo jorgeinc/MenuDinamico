@@ -7,22 +7,21 @@
     },
     {
       "id": 2,
-      "nombre": "Sobre Nosotros",
-      "principal": "/sobre-nosotros"
+      "nombre": "Pollo",
+      "principal": "/pollo"
     },
     {
       "id": 3,
-      "nombre": "Servicios",
-      "principal": "/servicios",
-      "submenu": [
-        
-      ]
+      "nombre": "Hamburguesa",
+      "principal": "/hamburguesa",
+    
     },
     {
       "id": 4,
-      "nombre": "Contacto",
-      "principal": "/contacto"
+      "nombre": "Guarniciones",
+      "principal": "/Guarniciones"
     }
   ]
 
 }
+
