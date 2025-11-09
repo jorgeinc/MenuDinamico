@@ -28,7 +28,7 @@ nav {
   position: relative;
 }
 
-#hamburger {
+#enter {
   display: none;
   background: none;
   border: none;
@@ -36,7 +36,7 @@ nav {
   font-size: 1.5em;
 }
 
-#menu {
+#menuDinamic {
   list-style: none;
   display: flex;
   gap: 15px;
@@ -44,18 +44,18 @@ nav {
   padding: 0;
 }
 
-#menu li {
+#menuDinamic li {
   position: relative;
 }
 
-#menu a {
+#menuDinamic a {
   color: white;
   text-decoration: none;
   padding: 8px 10px;
   display: block;
 }
 
-#menu li ul {
+#menuDinamic li ul {
   display: none;
   position: absolute;
   background: white;
@@ -68,16 +68,16 @@ nav {
   box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
-#menu li:hover > ul {
+#menuDinamic li:hover > ul {
   display: block;
 }
 
-#menu li ul li a {
+#menuDinamic li ul li a {
   color: #333;
   padding: 8px 12px;
 }
 
-#menu li ul li a:hover {
+#menuDinamic li ul li a:hover {
   background: #0ea5a4;
   color: white;
 }
@@ -112,11 +112,11 @@ button:hover {
 
 /* Responsivo */
 @media (max-width: 700px) {
-  #hamburger {
+  #enter {
     display: block;
   }
 
-  #menu {
+  #menuDinamic {
     display: none;
     flex-direction: column;
     background: #0ea5a4;
@@ -130,8 +130,9 @@ button:hover {
     display: flex;
   }
 
-  #menu li ul {
+  #menuDinamic li ul {
     position: static;
     box-shadow: none;
   }
 }
+
