@@ -1,8 +1,8 @@
 
-const menuContainer = M.getElementById("menuDinamic");
-const form = M.getElementById("form");
-const padreSelect = M.getElementById("principal");
-const enter = M.getElementById("enter");
+const menuContainer = document.getElementById("menu");
+const form = document.getElementById("form");
+const padreSelect = document.getElementById("padre");
+const hamburger = document.getElementById("hamburger");
 
 let menuData = [];
 
@@ -10,7 +10,7 @@ let menuData = [];
 fetch("submenujson.json")
   .then(res => res.json())
   .then(data => {
-    menuData = data.menuDinamic;
+    menuData = data.menu;
     renderMenu();
     updateParentSelect();
   })
@@ -22,19 +22,19 @@ fetch("submenujson.json")
 function renderMenu() {
   menuContainer.innerHTML = "";
   menuData.forEach(item => {
-    const li = M.createElement("li");
-    const a = M.createElement("a");
+    const li = document.createElement("li");
+    const a = document.createElement("a");
     a.textContent = item.nombre;
-    a.href = item.principal || "#";
+    a.href = item.enlace || "#";
 
     li.appendChild(a);
 
     // Si hay submenús
     if (item.submenu && item.submenu.length > 0) {
-      const ul = M.createElement("ul");
+      const ul = document.createElement("ul");
       item.submenu.forEach(sub => {
-        const subLi = M.createElement("li");
-        const subA = M.createElement("a");
+        const subLi = document.createElement("li");
+        const subA = document.createElement("a");
         subA.textContent = sub.nombre;
         subA.href = sub.enlace || "#";
         subLi.appendChild(subA);
@@ -51,7 +51,7 @@ function renderMenu() {
 function updateParentSelect() {
   padreSelect.innerHTML = '<option value="">Seleccione o Nuevo</option>';
   menuData.forEach(item => {
-    const option = M.createElement("option");
+    const option = document.createElement("option");
     option.value = item.id;
     option.textContent = item.nombre;
     padreSelect.appendChild(option);
@@ -62,9 +62,9 @@ function updateParentSelect() {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const nombre = M.getElementById("nombre").value.trim();
-  const dealle = M.getElementById("enlace").value.trim();
-  const principal = M.getElementById("padre").value;
+  const nombre = document.getElementById("nombre").value.trim();
+  const enlace = document.getElementById("enlace").value.trim();
+  const padre = document.getElementById("padre").value;
 
   if (!nombre) {
     alert("El nombre es obligatorio");
@@ -77,8 +77,8 @@ form.addEventListener("submit", (e) => {
     enlace
   };
 
-  if (principal) {
-    const parentItem = menuData.find(i => i.id == principal);
+  if (padre) {
+    const parentItem = menuData.find(i => i.id == padre);
     if (!parentItem.submenu) parentItem.submenu = [];
     parentItem.submenu.push(newItem);
   } else {
@@ -91,7 +91,6 @@ form.addEventListener("submit", (e) => {
 });
 
 // (móvil)
-enter.addEventListener("click", () => {
+hamburger.addEventListener("click", () => {
   menuContainer.classList.toggle("active");
 });
-
