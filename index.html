@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menú Dinámico con JSON</title>
+  <title>Menú con Json</title>
 
 
   
@@ -14,7 +14,7 @@
   <header>
     <h1 class="h1">Menú </h1> 
     <nav>
-      <button id="hamburger">☰</button>
+      <button id="enter"> </button>
       <ul id="menu"></ul>
     </nav>
   </header>
@@ -23,10 +23,10 @@
     <section id="admin">
       <h2>Ediccion del menú</h2>
       <form id="form">
-        <input type="text" id="nombre" placeholder="Nombre del ítem" required>
-        <input type="text" id="enlace" placeholder="Enlace / ruta o URL">
-        <select id="padre">
-          <option value="">-- Sin padre (principal) --</option>
+        <input type="text" id="nombre" placeholder="Nombre del Producto" required>
+        <input type="text" id="enlace" placeholder="Detalle del producto">
+        <select id="principal">
+          <option value="">-- Sin principal (principal) --</option>
         </select>
         <button type="submit">Agregar</button>
       </form>
@@ -36,3 +36,4 @@
   <script src="Codigo.js"> </script>
 </body>
 </html>
+
